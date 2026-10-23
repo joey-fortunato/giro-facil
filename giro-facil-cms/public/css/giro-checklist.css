@@ -1,0 +1,145 @@
+.giro-checklist-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: min(720px, calc(100vw - 32px));
+    max-width: none;
+    max-height: min(88vh, 820px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 12px;
+    background: #fff;
+    color: #172b4d;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, .28);
+    margin: 0;
+    transform: translate(-50%, -50%);
+    overscroll-behavior: contain;
+}
+.giro-checklist-page-locked { overflow: hidden !important; overscroll-behavior: none; }
+.giro-checklist-dialog[open] { display: block; }
+.giro-checklist-dialog::backdrop {
+    background: rgba(7, 20, 43, .72);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+.giro-checklist-dialog-content { position: relative; padding: clamp(22px, 4vw, 38px); }
+.giro-checklist-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border: 1px solid rgba(4, 48, 129, .14);
+    border-radius: 50%;
+    background: #fff;
+    color: #043081;
+    font-size: 17px;
+    cursor: pointer;
+}
+.giro-checklist-close:hover { background: #f3f6fb; }
+.giro-checklist-close:focus-visible,
+.giro-check-options label:has(input:focus-visible) {
+    outline: 3px solid rgba(210, 156, 99, .75);
+    outline-offset: 3px;
+}
+.giro-checklist-modal-heading { padding: 0 48px 22px 0; }
+.giro-checklist-modal-heading .subtitle {
+    margin-bottom: 8px;
+    color: #a76e37;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+.giro-checklist-modal-heading h2 {
+    margin: 0;
+    color: #043081;
+    font-size: clamp(25px, 4vw, 34px);
+    line-height: 1.18;
+}
+.giro-checklist-modal-heading p {
+    margin: 9px 0 0;
+    color: #536073;
+    font-size: 15px;
+    line-height: 1.55;
+}
+.giro-checklist-form {
+    margin: 0;
+    padding: 18px;
+    border: 1px solid rgba(4, 48, 129, .1);
+    border-radius: 8px;
+    background: #f7f9fc;
+}
+.giro-checklist-progress { display: block; margin: 0 0 14px; }
+.giro-checklist-progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #536073;
+    font-size: 12px;
+    font-weight: 600;
+}
+.giro-checklist-progress-track { height: 5px; overflow: hidden; border-radius: 6px; background: #dfe6ef; }
+.giro-checklist-progress-fill { display: block; width: 0; height: 100%; border-radius: inherit; background: #d29c63; transition: width .2s ease; }
+.giro-checklist-questions { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.giro-check-question {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    min-width: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0;
+    padding: 12px 14px;
+    border: 1px solid rgba(4, 48, 129, .09);
+    border-radius: 6px;
+    background: #fff;
+}
+.giro-check-question > p { margin: 0; color: #043081; font-size: 14px; font-weight: 700; line-height: 1.4; }
+.giro-check-options { display: flex; flex: 0 0 auto; gap: 6px; }
+.giro-check-options label {
+    position: relative;
+    display: inline-flex;
+    min-width: 58px;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    background: #fff;
+    color: #344054;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color .18s ease, background .18s ease, border-color .18s ease;
+}
+.giro-check-options input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.giro-check-options label:has(input:checked) { border-color: #043081; background: #043081; color: #fff; }
+.giro-checklist-result {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 12px;
+    padding: 14px 16px;
+    border-left: 4px solid #d29c63;
+    border-radius: 4px;
+    background: #fff;
+}
+.giro-checklist-result[hidden] { display: none; }
+.giro-checklist-result p { margin: 0; color: #043081; font-size: 14px; font-weight: 700; line-height: 1.5; }
+.giro-checklist-result a { flex: 0 0 auto; color: #043081; font-size: 13px; font-weight: 700; text-decoration: underline; text-decoration-color: #d29c63; text-underline-offset: 4px; }
+.giro-checklist-result.is-review { border-left-color: #a76e37; }
+.giro-checklist-note { margin: 14px 2px 0; color: #667085; font-size: 11px; line-height: 1.5; }
+@media (max-width: 575.98px) {
+    .giro-checklist-dialog-content { padding: 22px 16px; }
+    .giro-checklist-close { top: 14px; right: 14px; }
+    .giro-checklist-modal-heading { padding-right: 40px; }
+    .giro-checklist-form { padding: 12px; }
+    .giro-check-question { grid-template-columns: 1fr; gap: 9px; }
+    .giro-checklist-result { align-items: flex-start; flex-direction: column; }
+}

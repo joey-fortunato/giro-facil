@@ -1,0 +1,33 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+auth.json
+.npmrc
+.mcp.json
+.claude/
+.codex/
+.agents/
+.idea/
+.vscode/
+# Dependencies and generated files
+node_modules/
+vendor/
+*.log
+*.tmp
+*.bak
+Thumbs.db
+.DS_Store
+# Local databases, backups and private runtime data
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.db
+*.sql
+*.sql.gz
+giro-facil-cms/storage/**
+!giro-facil-cms/storage/**/
+!giro-facil-cms/storage/**/.gitignore
+giro-facil-cms/bootstrap/cache/*.php
+giro-facil-cms/public/storage
+giro-facil-cms/public/uploads/
