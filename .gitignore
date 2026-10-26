@@ -31,3 +31,13 @@ giro-facil-cms/storage/**
 giro-facil-cms/bootstrap/cache/*.php
 giro-facil-cms/public/storage
 giro-facil-cms/public/uploads/
+
+# Legacy static template: retained locally, not part of the Laravel repository
+/*.html
+/*.php
+/css/
+/fonts/
+/images/
+/js/
+# Font demonstration pages are not application resources
+/giro-facil-cms/public/fonts/**/*.html
